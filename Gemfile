@@ -47,5 +47,11 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'capybara', '~>3.37', '>= 3.37.1'
+  gem 'cuprite', '~>0.13'
+  gem 'selenium-webdriver', '~> 4.3'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
