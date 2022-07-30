@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <header class="row">
+        <div class="col px-0 mx-0 mb-3">
+          <%= render 'shared/navbar' %>
+        </div>
+      </header>
+      <section class="main-container">
+        <main>
+          <%= yield %>
+        </main>
+      </section>
+      <footer class="row">
+        <div class="col bg-dark text-white p-2">
+          <%= render 'shared/footer' %>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
