@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BeersStore</title>
+    <title>DrinksStore</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,12 +10,12 @@
   </head>
   <body>
     <div class="container-fluid">
-      <header class="row">
+      <header class="row bg-light">
         <div class="col px-0 mx-0 mb-3">
           <%= render 'shared/navbar' %>
         </div>
       </header>
-      <section class="main-container">
+      <section class="main-container bg-light">
         <main>
           <%= yield %>
         </main>
