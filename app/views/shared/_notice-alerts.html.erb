@@ -1,0 +1,30 @@
+<% if notice || alert %>
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-8 mx-5 mt-3">
+      <% if notice %>
+        <div class="row d-flex" role="alert">
+          <div class="col text-center">
+            <div class="alert alert-success alert-dismissible fade show">
+              <div class="fw-bold fs-2 align-items-center">
+                <%= notice %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="row d-flex" role="alert">
+          <div class="col text-center">
+            <div class="alert alert-warning alert-dismissible fade show">
+              <div class="fw-bold fs-2 align-items-center">
+                <%= alert %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

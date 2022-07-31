@@ -14,13 +14,8 @@
         <div class="col px-0 mx-0 mb-3">
           <%= render 'shared/navbar' %>
         </div>
-        <div class="row">
-          <div class="col">
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
-          </div>
-        </div>
       </header>
+      <%= render 'shared/notice-alerts' %>
       <section class="main-container bg-light">
         <main>
           <%= yield %>
