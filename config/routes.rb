@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   get '/drinks', to: 'pages#drinks', as: 'drinks_page'
   get '/snacks', to: 'pages#snacks', as: 'snacks_page'
 
+  get '/dashboard', to: 'admins#dashboard', as: 'dashboard_admins'
+  get '/drinks/new', to: 'admins#new_drink', as: 'new_drink_admins'
+  get '/snacks/new', to: 'admins#new_snack', as: 'new_snack_admins'
+  get '/promotion/new', to: 'admins#new_promo', as: 'new_promo_admins'
+
   root 'home#landing'
 end

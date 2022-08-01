@@ -1,0 +1,46 @@
+<div class="row">
+  <%= render 'options' %>
+  <div class="col-10">
+    <div class="row">
+      <div class="col text-center">
+        <h1 class="text-dark fw-bold ms-4 mt-4">Welcome <%= current_user.fullname %></h1>
+        <hr class="border border-primary border-3 opacity-75 ">
+      </div>
+    </div>
+    <div class="row my-3 ps-5">
+      <div class="col">
+        <h1 class="text-secondary fw-bold">Promos info</h1>
+        <p class="fs-2 fw-bold">You have 10 different Promotions to offer!</p>
+      </div>
+    </div>
+    <div class="row my-5 ps-5">
+      <div class="col-6">
+        <h3 class="text-secondary fw-bold">Create new Promo</h3>
+        <form action="new_drink" method="post">
+          
+          <div class="my-3">
+            <label class="form-label fs-4 fw-bold" for="">Name</label>
+            <input class="form-control" type="text" name="" id="">
+          </div>
+          
+          <div class="my-3">
+            <label class="form-label fs-4 fw-bold" for="">Description</label>
+            <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
+          </div>
+
+          <div class="form-check d-flex align-items-center mb-3">
+            <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label fs-4 fw-bold" for="flexCheckDefault">
+              Active
+            </label>
+          </div>
+
+          <div class="my-3">
+            <label class="form-label fs-4 fw-bold" for="">Price</label>
+            <input class="form-control" type="number" name="" id="">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
