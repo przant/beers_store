@@ -1,0 +1,10 @@
+<h1 class="text-secondary fw-bold">Promos info</h1>
+<% if total_promos.zero? %>
+  <p class="fs-2 fw-bold">You currently don't have any promo to offer </p>
+<% end %>
+<% if total_promos.positive? && total_promos == 1 %>
+  <p class="fs-2 fw-bold">You have 1 promo to offer! </p>
+<% end %>
+<% if total_promos.positive? && total_promos > 1%>
+  <p class="fs-2 fw-bold">You have <%= "#{total_promos}" %> Promotions to offer! </p>
+<% end %>
