@@ -1,0 +1,10 @@
+<h1 class="text-secondary fw-bold">Users info</h1>
+<% if total_users.zero? %>
+  <p class="fs-2 fw-bold">You don't have have any user registered</p>
+<% end %>
+<% if total_users.positive? && total_users == 1 %>
+  <p class="fs-2 fw-bold">You have 1 user registered </p>
+<% end %>
+<% if total_users.positive? && total_users > 1 %>
+  <p class="fs-2 fw-bold">There are <%= "#{total_users}" %> users in the platform! </p>
+<% end %>
