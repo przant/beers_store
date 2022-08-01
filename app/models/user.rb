@@ -11,6 +11,10 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { in: 3..15 }
   validates :surname, presence: true, length: { in: 3..25 }
 
+  def fullname
+    "#{name}, #{surname}"
+  end
+
   def admin?
     role == 'Admin'
   end
