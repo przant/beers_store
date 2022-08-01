@@ -9,34 +9,51 @@
     </div>
     <div class="row my-3 ps-5">
       <div class="col">
-        <h1 class="text-secondary fw-bold">Snacks info</h1>
-        <p class="fs-2 fw-bold">You are offering currently 6 different Snacks!</p>
+        <%= render 'snacks_count' %>
       </div>
     </div>
     <div class="row my-5 ps-5">
       <div class="col-6">
         <h3 class="text-secondary fw-bold">Create new Snack</h3>
-        <form action="new_drink" method="post">
+        <%= form_with model: @snack, url: create_snack_admins_path, method: :post do |f| %>
+          <% if @snack.errors.any? %>
+            <div>
+              <h2><%= pluralize(@snack.errors.count, "error") %></h2>
+              <ul>
+                <% @snack.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
           <div class="my-3">
-            <label class="form-label fs-4 fw-bold" for="">Name</label>
-            <input class="form-control" type="text" name="" id="">
+            <%= f.label :name, class: 'form-label fs-4 fw-bold' %>
+            <%= f.text_field :name, autocomplete: 'name', class: 'form-control' %>
           </div>
 
           <div class="my-3">
-            <label class="form-label fs-4 fw-bold" for="">Description</label>
-            <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
+            <%= f.label :description, class: 'form-label fs-4 fw-bold' %>
+            <%= f.text_area :description, autocomplete: 'description', class: 'form-control' %>
           </div>
 
           <div class="my-3">
-            <label class="form-label fs-4 fw-bold" for="">Ingredients</label>
-            <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
+            <%= f.label :ingredients, class: 'form-label fs-4 fw-bold' %>
+            <%= f.text_area :ingredients, autocomplete: 'ingredients', class: 'form-control' %>
           </div>
 
-          <div class="my-3">
-            <label class="form-label fs-4 fw-bold" for="">Price</label>
-            <input class="form-control" type="number" name="" id="">
+          <div class="my-3" data-controller="range">
+            <%= f.label :price, class: 'form-label fs-4 fw-bold' %>
+            <div class="text-center">
+              <%= f.range_field :price, in: 1..250, stetp: 1, value: 125, class: 'form-range', 'data-action': 'range#update', 'data-range-target': 'input' %>
+              <%= f.label '$',  'data-range-target': 'label' %>
+            </div>
           </div>
-        </form>
+
+          <div class="d-grid gap-2 mb-5">
+            <%= f.submit "Add new snack", class: 'btn btn-primary btn-lg' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
