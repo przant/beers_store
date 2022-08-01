@@ -31,6 +31,17 @@ class AdminsController < ApplicationController
   end
 
   def new_promo
+    @promo = Promo.new
+  end
+
+  def create_promo
+    @promo = Promo.new(promo_params)
+
+    if @promo.save
+      redirect_to dashboard_admins_path, notice: 'Promo was successfully created.'
+    else
+      render :new_promo, status: :unprocessable_entity
+    end
   end
 
   private
@@ -41,5 +52,9 @@ class AdminsController < ApplicationController
 
   def snack_params
     params.require(:snack).permit(:name, :description, :ingredients, :price)
+  end
+
+  def promo_params
+    params.require(:promo).permit(:name, :description, :price, :active)
   end
 end

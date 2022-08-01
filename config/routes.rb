@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/snacks/new', to: 'admins#create_snack', as: 'create_snack_admins'
 
   get '/promotion/new', to: 'admins#new_promo', as: 'new_promo_admins'
+  post '/promotion/new', to: 'admins#create_promo', as: 'create_promo_admins'
 
   root 'home#landing'
 end
