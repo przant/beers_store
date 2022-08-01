@@ -1,60 +1,24 @@
-<div class="row">
-  <%= render 'options' %>
-  <div class="col-10">
-    <div class="row">
-      <div class="col text-center">
-        <h1 class="text-dark fw-bold ms-4 mt-4">Welcome <%= current_user.fullname %></h1>
-        <hr class="border border-primary border-3 opacity-75 ">
+<% if current_user.admin? %>
+  <div class="row">
+    <%= render 'options' %>
+    <div class="col-10">
+      <div class="row">
+        <div class="col text-center">
+          <h1 class="text-dark fw-bold ms-4 mt-4">Welcome <%= current_user.fullname %></h1>
+          <hr class="border border-primary border-3 opacity-75 ">
+        </div>
       </div>
-    </div>
-    <div class="row my-3 ps-5">
-      <div class="col">
-        <%= render 'drinks_count' %>
+      <div class="row my-3 ps-5">
+        <div class="col">
+          <%= render 'drinks_count' %>
+        </div>
       </div>
-    </div>
-    <div class="row my-5 ps-5">
-      <div class="col-6">
-        <h3 class="text-secondary fw-bold">Create New Drink</h3>
-        <%= form_with model: @drink, url: create_drink_admins_path, method: :post do |f| %>
-          <% if @drink.errors.any? %>
-            <div>
-              <h2><%= pluralize(@drink.errors.count, "error") %></h2>
-              <ul>
-                <% @drink.errors.each do |error| %>
-                  <li><%= error.full_message %></li>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
-
-          <div class="my-3">
-            <%= f.label :name, class: 'form-label fs-4 fw-bold' %>
-            <%= f.text_field :name, autocomplete: 'name', class: 'form-control' %>
-          </div>
-
-          <div class="my-3">
-            <%= f.label :description, class: 'form-label fs-4 fw-bold' %>
-            <%= f.text_area :description, autocomplete: 'description', class: 'form-control' %>
-          </div>
-
-          <div class="my-3">
-            <%= f.label :ingredients, class: 'form-label fs-4 fw-bold' %>
-            <%= f.text_area :ingredients, autocomplete: 'ingredients', class: 'form-control' %>
-          </div>
-
-          <div class="my-3" data-controller="range">
-            <%= f.label :price, class: 'form-label fs-4 fw-bold' %>
-            <div class="text-center">
-              <%= f.range_field :price, in: 1..250, stetp: 1, value: 125, class: 'form-range', 'data-action': 'range#update', 'data-range-target': 'input' %>
-              <%= f.label '$',  'data-range-target': 'label' %>
-            </div>
-          </div>
-
-          <div class="d-grid gap-2 mb-5">
-            <%= f.submit "Add new drink", class: 'btn btn-primary btn-lg' %>
-          </div>
-        <% end %>
+      <div class="row my-5 ps-5">
+        <div class="col-6">
+          <h3 class="text-secondary fw-bold">Create New Drink</h3>
+            <%= render 'new_drink_form' %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
