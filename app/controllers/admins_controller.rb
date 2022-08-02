@@ -11,7 +11,19 @@ class AdminsController < ApplicationController
   end
 
   def promos
-    @promos = Promo.where(active: true)
+    @promos = Promo.all
+  end
+
+  def drink
+    @drink = Drink.find(params[:id])
+  end
+
+  def snack
+    @snack = Snack.find(params[:id])
+  end
+
+  def promo
+    @promo = Promo.find(params[:id])
   end
 
   def new_drink

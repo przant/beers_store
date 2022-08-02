@@ -20,5 +20,9 @@ Rails.application.routes.draw do
   get '/promotion/new', to: 'admins#new_promo', as: 'new_promo_admins'
   post '/promotion/new', to: 'admins#create_promo', as: 'create_promo_admins'
 
+  get '/admin/drinks/:id', to: 'admins#drink', as: 'drink_admins'
+  get '/admin/snacks/:id', to: 'admins#snack', as: 'snack_admins'
+  get '/admin/promos/:id', to: 'admins#promo', as: 'promo_admins'
+
   root 'home#landing'
 end
