@@ -1,0 +1,36 @@
+<% if current_user.admin? %>
+  <div class="row">
+    <%= render 'options' %>
+    <div class="col-10">
+      <div class="row my-5 ps-5">
+        <div class="col-10">
+          <h1 class="text-secondary fw-bold mb-4">Snack List</h1>
+          <% if total_snacks.positive? %>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col" class="fs-3 fw-bold">Name</th>
+                  <th scope="col" class="fs-3 fw-bold">Price</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @snacks.each do |snack| %>
+                  <tr>
+                    <td scope="row"><strong class="fs-4"><%= snack.name %></strong></td>
+                    <td><strong class="fs-4"><%= snack.price %></strong></td>
+                    <td><%= link_to 'Details', '#details', class: 'fs-4 fw-bold text-decoration-none' %></td>
+                    <td><%= link_to 'Edit', '#edit', class: 'fs-4 fw-bold text-decoration-none ' %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          <% else %>
+            <h2 class="text-secondary fw-bold text-center mt-5 pt-5">There are no snacks to show</h1>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
