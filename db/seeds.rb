@@ -36,3 +36,33 @@ User.create(
     }
   ]
 )
+
+# Drink tests objects
+10.times do |number|
+  Drink.create(
+    name: "Drink example##{number + 1}",
+    description: "Description example for the drink##{number + 1}",
+    ingredients: "Ingredients list for the drink##{number + 1}",
+    price: 125.00
+  )
+end
+
+# Snack tests objects
+10.times do |number|
+  Snack.create(
+    name: "Snack example##{number + 1}",
+    description: "Description example for the snack##{number + 1}",
+    ingredients: "Ingredients list for the snack##{number + 1}",
+    price: 125.00
+  )
+end
+
+# Promo tests objects 
+10.times do |number|
+  Promo.create(
+    name: "Snack example##{number + 1}",
+    description: "Description example for the snack##{number + 1}",
+    active: [true, false].sample,
+    price: 125.00
+  )
+end
