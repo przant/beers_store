@@ -21,7 +21,7 @@
                     <td scope="row"><strong class="fs-4"><%= drink.name %></strong></td>
                     <td><strong class="fs-4"><%= drink.price %></strong></td>
                     <td><%= link_to 'Details', drink_admins_path(drink), class: 'fs-4 fw-bold text-decoration-none' %></td>
-                    <td><%= link_to 'Edit', '#edit', class: 'fs-4 fw-bold text-decoration-none ' %></td>
+                    <td><%= link_to 'Edit', edit_drink_admins_path(drink), class: 'fs-4 fw-bold text-decoration-none ' %></td>
                   </tr>
                 <% end %>
               </tbody>
