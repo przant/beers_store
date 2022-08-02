@@ -2,6 +2,10 @@ class AdminsController < ApplicationController
   def dashboard
   end
 
+  def drinks
+    @drinks = Drink.all
+  end
+
   def new_drink
     @drink = Drink.new
   end
