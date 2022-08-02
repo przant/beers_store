@@ -68,6 +68,48 @@ class AdminsController < ApplicationController
     end
   end
 
+  def edit_drink
+    @drink = Drink.find(params[:id])
+  end
+
+  def update_drink
+    @drink = Drink.find(params[:id])
+
+    if @drink.update(drink_params)
+      redirect_to drink_admins_path(@drink), notice: 'Drink was successfully updated.'
+    else
+      render :edit_drink
+    end
+  end
+
+  def edit_snack
+    @snack = Snack.find(params[:id])
+  end
+
+  def update_snack
+    @snack = Snack.find(params[:id])
+
+    if @snack.update(snack_params)
+      redirect_to snack_admins_path(@snack), notice: 'Snack was successfully updated.'
+    else
+      render :edit_snack
+    end
+  end
+
+  def edit_promo
+    @promo = Promo.find(params[:id])
+  end
+
+  def update_promo
+    @promo = Promo.find(params[:id])
+
+    if @promo.update(promo_params)
+      redirect_to promo_admins_path(@promo), notice: 'Promo was successfully updated.'
+    else
+      render :edit_promo
+    end
+  end
+
   private
 
   def drink_params

@@ -24,5 +24,14 @@ Rails.application.routes.draw do
   get '/admin/snacks/:id', to: 'admins#snack', as: 'snack_admins'
   get '/admin/promos/:id', to: 'admins#promo', as: 'promo_admins'
 
+  get '/admin/drinks/:id/edit', to: 'admins#edit_drink', as: 'edit_drink_admins'
+  patch '/admin/drinks/:id/edit', to: 'admins#update_drink', as: 'update_drink_admins'
+
+  get '/admin/snacks/:id/edit', to: 'admins#edit_snack', as: 'edit_snack_admins'
+  patch '/admin/snacks/:id/edit', to: 'admins#update_snack', as: 'update_snack_admins'
+
+  get '/admin/promos/:id/edit', to: 'admins#edit_promo', as: 'edit_promo_admins'
+  patch '/admin/promos/:id/edit', to: 'admins#update_promo', as: 'update_promo_admins'
+
   root 'home#landing'
 end
