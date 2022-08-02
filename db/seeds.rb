@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Create admin and three users
 # The first created user will hav 'Admin' role
 User.create(
   [
@@ -16,10 +17,22 @@ User.create(
       password: 'susanoo123'
     },
     {
+      name: 'Naruto',
+      surname: 'Uzumaki',
+      email: 'naruto@konoha.com',
+      password: 'rasengan123'
+    },
+    {
       name: 'Luffy',
       surname: 'Monkey D.',
       email: 'monkeyd@strawhats.com',
       password: 'snakeman4'
+    },
+    {
+      name: 'Zoro',
+      surname: 'Shimotsuki',
+      email: 'roronoa@strawhats.com',
+      password: 'santoryou3'
     }
   ]
 )
