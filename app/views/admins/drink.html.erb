@@ -1,0 +1,36 @@
+<% if current_user.admin? %>
+  <div class="row">
+    <%= render 'options' %>
+    <div class="col-10">
+      <div class="row my-5 ps-5">
+        <div class="col-10">
+          <!-- Card section -->
+          <div class="card border-info">
+            <div class="card-body">
+              <h1 class="card-title text-primary fw-bold mb-2"><%= @drink.name %></h1>
+              <h2 class="card-text text-secondary fw-bold mb-3">$<%= @drink.price %></h2>
+              <hr class="border border-dark border-3 opacity-80 ">
+              <p class="card-text fs-2 fw-bold text-secondary"><%= @drink.description %></p>
+              <!-- Accordion section -->
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      <strong class="text-secondary fs-2 fw-bold">Ingredients</strong>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      <p class="fs-3 fw-bold text-secondary mb-0"><%= @drink.ingredients %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <img src="..." class="card-img-bottom" alt="..."> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
