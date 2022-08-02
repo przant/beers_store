@@ -20,8 +20,7 @@ class User < ApplicationRecord
   end
 
   def set_admin
-    return if User.count.positive?
-
-    self.role = 'Admin'
+    self.role = 'Admin' if User.count.zero?
+    self.role = 'User' if User.count.positive?
   end
 end
