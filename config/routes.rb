@@ -33,5 +33,9 @@ Rails.application.routes.draw do
   get '/admin/promos/:id/edit', to: 'admins#edit_promo', as: 'edit_promo_admins'
   patch '/admin/promos/:id/edit', to: 'admins#update_promo', as: 'update_promo_admins'
 
+  delete '/admin/drinks/:id', to: 'admins#delete_drink', as: 'delete_drink_admins'
+  delete '/admin/snacks/:id', to: 'admins#delete_snack', as: 'delete_snack_admins'
+  delete '/admin/promos/:id', to: 'admins#delete_promo', as: 'delete_promo_admins'
+
   root 'home#landing'
 end
