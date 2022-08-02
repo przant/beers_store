@@ -2,6 +2,18 @@ class AdminsController < ApplicationController
   def dashboard
   end
 
+  def drinks
+    @drinks = Drink.all
+  end
+
+  def snacks
+    @snacks = Snack.all
+  end
+
+  def promos
+    @promos = Promo.where(active: true)
+  end
+
   def new_drink
     @drink = Drink.new
   end
