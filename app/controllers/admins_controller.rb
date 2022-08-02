@@ -10,6 +10,10 @@ class AdminsController < ApplicationController
     @snacks = Snack.all
   end
 
+  def promos
+    @promos = Promo.where(active: true)
+  end
+
   def new_drink
     @drink = Drink.new
   end

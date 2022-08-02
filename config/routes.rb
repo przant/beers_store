@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'admins#dashboard', as: 'dashboard_admins'
   get '/admin/drinks/', to: 'admins#drinks', as: 'drinks_admins'
   get '/admin/snacks/', to: 'admins#snacks', as: 'snacks_admins'
+  get '/admin/promos/', to: 'admins#promos', as: 'promos_admins'
 
   get '/drinks/new', to: 'admins#new_drink', as: 'new_drink_admins'
   post '/drinks/new', to: 'admins#create_drink', as: 'create_drink_admins'
