@@ -1,6 +1,6 @@
 <% if current_user.admin? %>
   <div class="row">
-    <%= render 'options' %>
+    <%= render 'admins/shared/options' %>
     <div class="col-10">
       <div class="row">
         <div class="col text-center">
@@ -8,15 +8,15 @@
           <hr class="border border-primary border-3 opacity-75 ">
         </div>
       </div>
-      <div class="row my-3 ps-5">
-        <div class="col">
-          <%= render 'drinks_count' %>
+      <div class="row my-5 ps-5">
+        <div class="col-6">
+          <h3 class="text-secondary fw-bold">Update Drink</h3>
+            <%= render 'edit_drink_form' %>
         </div>
       </div>
       <div class="row my-5 ps-5">
-        <div class="col-6">
-          <h3 class="text-secondary fw-bold">Create New Drink</h3>
-            <%= render 'new_drink_form' %>
+        <div class="col-10">
+          <%= link_to 'Back to list', drinks_admins_path, class: 'fs-4 fw-bold text-decoration-none' %>
         </div>
       </div>
     </div>
