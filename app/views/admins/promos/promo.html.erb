@@ -1,6 +1,6 @@
 <% if current_user.admin? %>
   <div class="row">
-    <%= render 'options' %>
+    <%= render 'admins/shared/options' %>
     <div class="col-10">
       <div class="row my-5 ps-5">
         <div class="col-10">
@@ -18,7 +18,7 @@
       </div>
       <div class="row my-5 ps-5">
         <div class="col-10">
-          <%= link_to 'Back to list', drinks_admins_path, class: 'fs-4 fw-bold text-decoration-none' %>
+          <%= link_to 'Back to list', promos_admins_path, class: 'fs-4 fw-bold text-decoration-none' %>
         </div>
       </div>
     </div>
