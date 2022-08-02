@@ -1,0 +1,10 @@
+<h1 class="text-secondary fw-bold mt-4">Drinks info</h1>
+<% if total_drinks.zero? %>
+  <p class="fs-2 fw-bold mb-0">You currently don't have any drink to offer </p>
+<% end %>
+<% if total_drinks.positive? && total_drinks == 1 %>
+  <p class="fs-2 fw-bold mb-0">You have 1 drink to offer! </p>
+<% end %>
+<% if total_drinks.positive? && total_drinks > 1%>
+  <p class="fs-2 fw-bold mb-0">You are offering currently <%= "#{total_drinks}" %> different drinks! </p>
+<% end %>
