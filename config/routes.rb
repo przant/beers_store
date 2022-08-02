@@ -24,13 +24,13 @@ Rails.application.routes.draw do
   patch '/admin/snacks/:id/edit', to: 'admins/snacks#update_snack', as: 'update_snack_admins'
   delete '/admin/snacks/:id', to: 'admins/snacks#delete_snack', as: 'delete_snack_admins'
 
-  get '/admin/promos/', to: 'admins#promos', as: 'promos_admins'
-  get '/promotion/new', to: 'admins#new_promo', as: 'new_promo_admins'
-  post '/promotion/new', to: 'admins#create_promo', as: 'create_promo_admins'
-  get '/admin/promos/:id', to: 'admins#promo', as: 'promo_admins'
-  get '/admin/promos/:id/edit', to: 'admins#edit_promo', as: 'edit_promo_admins'
-  patch '/admin/promos/:id/edit', to: 'admins#update_promo', as: 'update_promo_admins'
-  delete '/admin/promos/:id', to: 'admins#delete_promo', as: 'delete_promo_admins'
+  get '/admin/promos/', to: 'admins/promos#promos', as: 'promos_admins'
+  get '/promotion/new', to: 'admins/promos#new_promo', as: 'new_promo_admins'
+  post '/promotion/new', to: 'admins/promos#create_promo', as: 'create_promo_admins'
+  get '/admin/promos/:id', to: 'admins/promos#promo', as: 'promo_admins'
+  get '/admin/promos/:id/edit', to: 'admins/promos#edit_promo', as: 'edit_promo_admins'
+  patch '/admin/promos/:id/edit', to: 'admins/promos#update_promo', as: 'update_promo_admins'
+  delete '/admin/promos/:id', to: 'admins/promos#delete_promo', as: 'delete_promo_admins'
 
   root 'home#landing'
 end
