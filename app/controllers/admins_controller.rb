@@ -6,6 +6,10 @@ class AdminsController < ApplicationController
     @drinks = Drink.all
   end
 
+  def snacks
+    @snacks = Snack.all
+  end
+
   def new_drink
     @drink = Drink.new
   end
