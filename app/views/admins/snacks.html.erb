@@ -13,6 +13,7 @@
                   <th scope="col" class="fs-3 fw-bold">Price</th>
                   <th scope="col"></th>
                   <th scope="col"></th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
@@ -22,6 +23,7 @@
                     <td><strong class="fs-4"><%= snack.price %></strong></td>
                     <td><%= link_to 'Details', snack_admins_path(snack), class: 'fs-4 fw-bold text-decoration-none' %></td>
                     <td><%= link_to 'Edit', edit_snack_admins_path(snack), class: 'fs-4 fw-bold text-decoration-none ' %></td>
+                    <td><%= link_to 'Delete', delete_snack_admins_path(snack), class: 'fs-4 fw-bold text-decoration-none', method: :delete, data: { confirm: 'Are you relly want to delete the selected drink?' } %></td>
                   </tr>
                 <% end %>
               </tbody>

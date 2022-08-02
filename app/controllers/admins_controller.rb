@@ -110,6 +110,36 @@ class AdminsController < ApplicationController
     end
   end
 
+  def delete_drink
+    @drink = Drink.find(params[:id])
+
+    if @drink.destroy
+      redirect_to drinks_admins_path, notice: 'The drink was successfuly removed.'
+    else
+      redirect_to drinks_admins_path, alert: 'Cannot remove the drink.'
+    end
+  end
+
+  def delete_snack
+    @snack = Snack.find(params[:id])
+
+    if @snack.destroy
+      redirect_to snacks_admins_path, notice: 'The snack was successfuly removed.'
+    else
+      redirect_to snacks_admins_path, alert: 'Cannot remove the snack.'
+    end
+  end
+
+  def delete_promo
+    @promo = Promo.find(params[:id])
+
+    if @promo.destroy
+      redirect_to promos_admins_path, notice: 'The promo was successfully removed'
+    else
+      redirect_to promos_admins_path, alert: 'Cannot remove the promo'
+    end
+  end
+
   private
 
   def drink_params
