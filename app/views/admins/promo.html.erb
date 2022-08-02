@@ -1,0 +1,21 @@
+<% if current_user.admin? %>
+  <div class="row">
+    <%= render 'options' %>
+    <div class="col-10">
+      <div class="row my-5 ps-5">
+        <div class="col-10">
+          <!-- Card section -->
+          <div class="card border-danger">
+            <div class="card-body">
+              <h1 class="card-title text-primary fw-bold mb-2"><%= @promo.name %></h1>
+              <h2 class="card-text text-secondary fw-bold mb-3"><%= @promo.active ? 'Active promo' : 'Inactive promo' %></h2>
+              <hr class="border border-dark border-3 opacity-80 ">
+              <p class="card-text fs-2 fw-bold text-secondary"><%= @promo.description %></p>
+            </div>
+            <!-- <img src="..." class="card-img-bottom" alt="..."> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
