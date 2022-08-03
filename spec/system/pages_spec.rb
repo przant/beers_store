@@ -108,7 +108,7 @@ RSpec.describe 'Pages', type: :system do
 
         expect(page).to have_text 'SamplePromo', count: 3
         expect(page).to have_text 'Sample description for the Promo', count: 3
-        expect(page).to have_text '$1.5', count: 3
+        expect(page).to have_text '$50', count: 3
       end
     end
   end
