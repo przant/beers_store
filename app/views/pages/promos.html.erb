@@ -1,51 +1,50 @@
-<% if user_signed_in? %>
-  <div class="row">
-    <div class="col">
-      <% if @promos.count.zero? %>
-        <p class="fs-2 fw-bold mb-0">There are no any active promotions currently</p>
-      <% else @promos.count.positive? %>
-        <% if @promos.count.even? %>
-          <div class="row justify-content-around">
-            <% @promos.each do |promo| %>
-              <div class="col-5">
-                <div class="card mb-4">
-                  <%= image_tag 'cards/beers.jpg', class: 'card-img-top' %>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= promo.name %></h5>
-                    <p class="card-text">
-                      <%= promo.description %>
-                    </p>
-                    <p class="card-text">
-                      <%= "$#{promo.price}" %>
-                    </p>
-                    <a href="#" class="btn btn-primary">Show Beer catalog</a>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% else %>
+  
+<div class="row">
+  <div class="col">
+    <% if @promos.count.zero? %>
+      <p class="fs-2 fw-bold mb-0">There are no any active promotions currently</p>
+    <% else @promos.count.positive? %>
+      <% if @promos.count.even? %>
         <div class="row justify-content-around">
-            <% @promos.each do |promo| %>
-              <div class="col-4">
-                <div class="card mb-4">
-                  <%= image_tag 'cards/beers.jpg', class: 'card-img-top' %>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= promo.name %></h5>
-                    <p class="card-text">
-                      <%= promo.description %>
-                    </p>
-                    <p class="card-text">
-                      <%= "$#{promo.price}" %>
-                    </p>
-                    <a href="#" class="btn btn-primary">Show Beer catalog</a>
-                  </div>
+          <% @promos.each do |promo| %>
+            <div class="col-5">
+              <div class="card mb-4">
+                <%= image_tag 'cards/beers.jpg', class: 'card-img-top' %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= promo.name %></h5>
+                  <p class="card-text">
+                    <%= promo.description %>
+                  </p>
+                  <p class="card-text">
+                    <%= "$#{promo.price}" %>
+                  </p>
+                  <a href="#" class="btn btn-primary">Show Beer catalog</a>
                 </div>
               </div>
-            <% end %>
-          </div>
-        <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="row justify-content-around">
+          <% @promos.each do |promo| %>
+            <div class="col-4">
+              <div class="card mb-4">
+                <%= image_tag 'cards/beers.jpg', class: 'card-img-top' %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= promo.name %></h5>
+                  <p class="card-text">
+                    <%= promo.description %>
+                  </p>
+                  <p class="card-text">
+                    <%= "$#{promo.price}" %>
+                  </p>
+                  <a href="#" class="btn btn-primary">Show Beer catalog</a>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
