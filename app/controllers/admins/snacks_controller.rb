@@ -18,7 +18,7 @@ module Admins
       @snack = Snack.new(snack_params)
 
       if @snack.save
-        redirect_to dashboard_admins_path, notice: 'Snack was successfully created.'
+        redirect_to snack_admins_path(@snack), notice: 'Snack was successfully created.'
       else
         render :new_snack, status: :unprocessable_entity
       end
@@ -42,7 +42,7 @@ module Admins
       @snack = Snack.find(params[:id])
 
       if @snack.destroy
-        redirect_to snacks_admins_path, notice: 'The snack was successfuly removed.'
+        redirect_to snacks_admins_path, notice: 'The snack was successfully removed.'
       else
         redirect_to snacks_admins_path, alert: 'Cannot remove the snack.'
       end

@@ -24,7 +24,7 @@
   <div class="my-3" data-controller="range">
     <%= f.label :price, class: 'form-label fs-4 fw-bold' %>
     <div class="text-center">
-      <%= f.range_field :price, in: 1..250, stetp: 1, value: 125, class: 'form-range', 'data-action': 'range#update', 'data-range-target': 'input' %>
+      <%= f.range_field :price, in: 1..250, stetp: 1, value: @snack.price, class: 'form-range', 'data-action': 'range#update', 'data-range-target': 'input' %>
       <%= f.label '$',  'data-range-target': 'label' %>
     </div>
   </div>
