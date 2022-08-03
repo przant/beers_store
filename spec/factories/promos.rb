@@ -5,7 +5,7 @@ FactoryBot.define do
     sequence(:name) { |n| "SamplePromo##{n}" }
     sequence(:description) { |n| "Sample description for the Promo ##{n}" }
     active { false }
-    price { 1.5 }
+    price { 50 }
   end
 
   trait :active_promo do

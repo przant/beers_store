@@ -18,7 +18,7 @@ module Admins
       @drink = Drink.new(drink_params)
 
       if @drink.save
-        redirect_to dashboard_admins_path, notice: 'Drink was successfully created.'
+        redirect_to drink_admins_path(@drink), notice: 'Drink was successfully created.'
       else
         render :new_drink, status: :unprocessable_entity
       end
@@ -42,7 +42,7 @@ module Admins
       @drink = Drink.find(params[:id])
 
       if @drink.destroy
-        redirect_to drinks_admins_path, notice: 'The drink was successfuly removed.'
+        redirect_to drinks_admins_path, notice: 'The drink was successfully removed.'
       else
         redirect_to drinks_admins_path, alert: 'Cannot remove the drink.'
       end
