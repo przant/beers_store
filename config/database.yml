@@ -23,8 +23,8 @@ default: &default
 
 development:
   <<: *default
-  database: beers_store_development
-  username: beers_store
+  database: drinks_store_development
+  username: drinks_store
   password: abc123#
   port: 5432
 
@@ -42,8 +42,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: beers_store_test
-  username: beers_store
+  database: drinks_store_test
+  username: drinks_store
   password: abc123#
   port: 5432
 
