@@ -18,7 +18,7 @@ module Admins
       @promo = Promo.new(promo_params)
 
       if @promo.save
-        redirect_to dashboard_admins_path, notice: 'Promo was successfully created.'
+        redirect_to promo_admins_path(@promo), notice: 'Promo was successfully created.'
       else
         render :new_promo, status: :unprocessable_entity
       end
@@ -42,7 +42,7 @@ module Admins
       @promo = Promo.find(params[:id])
 
       if @promo.destroy
-        redirect_to promos_admins_path, notice: 'The promo was successfully removed'
+        redirect_to promos_admins_path, notice: 'The promo was successfully removed.'
       else
         redirect_to promos_admins_path, alert: 'Cannot remove the promo'
       end
