@@ -60,8 +60,8 @@ end
 # Promo tests objects 
 10.times do |number|
   Promo.create(
-    name: "Snack example##{number + 1}",
-    description: "Description example for the snack##{number + 1}",
+    name: "Promo example##{number + 1}",
+    description: "Description example for the promo##{number + 1}",
     active: [true, false].sample,
     price: 125.00
   )

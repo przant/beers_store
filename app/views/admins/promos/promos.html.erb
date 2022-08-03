@@ -14,6 +14,7 @@
                   <th scope="col"></th>
                   <th scope="col"></th>
                   <th scope="col"></th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
@@ -21,6 +22,7 @@
                   <tr>
                     <td scope="row"><strong class="fs-4"><%= promo.name %></strong></td>
                     <td><strong class="fs-4"><%= promo.price %></strong></td>
+                    <td><strong class="fs-4"><%= promo.active ? 'Active' : 'Inactive' %></strong></td>
                     <td><%= link_to 'Details', promo_admins_path(promo), class: 'fs-4 fw-bold text-decoration-none' %></td>
                     <td><%= link_to 'Edit', edit_promo_admins_path(promo), class: 'fs-4 fw-bold text-decoration-none ' %></td>
                     <td><%= link_to 'Delete', delete_promo_admins_path(promo), class: 'fs-4 fw-bold text-decoration-none', method: :delete, data: { confirm: 'Are you relly want to delete the selected drink?' } %></td>

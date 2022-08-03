@@ -20,6 +20,11 @@
         <li class="nav-item">
           <%= link_to 'Snacks', snacks_page_path, class: 'nav-link' %>
         </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Promos', promos_page_path, class: 'nav-link' %>
+          </li>
+        <% end %>
       </ul>
       <% if user_signed_in? %>
         <span class="navbar-text">
