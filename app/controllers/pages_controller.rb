@@ -5,5 +5,7 @@ class PagesController < ApplicationController
 
   def snacks; end
 
-  def promos; end
+  def promos
+    @promos = Promo.where(active: true)
+  end
 end
