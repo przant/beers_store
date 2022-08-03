@@ -8,4 +8,12 @@ FactoryBot.define do
     password { '12345678' }
     password_confirmation { '12345678' }
   end
+
+  trait :normal_user do
+    role { 'User' }
+  end
+
+  trait :admin_user do
+    role { 'Admin' }
+  end
 end

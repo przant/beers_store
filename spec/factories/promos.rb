@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :promo do
-    sequence(:name) { |n| "SampleSnack##{n}" }
-    sequence(:description) { |n| "Sample description for the Snack ##{n}" }
+    sequence(:name) { |n| "SamplePromo##{n}" }
+    sequence(:description) { |n| "Sample description for the Promo ##{n}" }
     active { false }
     price { 1.5 }
   end
